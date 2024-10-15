@@ -1,7 +1,7 @@
 ﻿
 namespace GUI
 {
-    partial class FormCayGiaPha
+    partial class FamilyTreeForm
     {
         /// <summary>
         /// Required designer variable.

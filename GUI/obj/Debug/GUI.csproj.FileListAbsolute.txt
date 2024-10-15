@@ -33,4 +33,5 @@ D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\D
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\bin\Debug\System.Numerics.Vectors.xml
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.exe.config
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.FormCayGiaPha.resources
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.FamilyTreeForm.resources
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.LoginForm.resources

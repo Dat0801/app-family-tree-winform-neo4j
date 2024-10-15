@@ -11,10 +11,10 @@ using BLL;
 using DTO;
 namespace GUI
 {
-    public partial class FormCayGiaPha : Form
+    public partial class FamilyTreeForm : Form
     {
         private readonly PersonBLL personBLL;
-        public FormCayGiaPha()
+        public FamilyTreeForm()
         {
             InitializeComponent();
             personBLL = new PersonBLL();
@@ -24,9 +24,9 @@ namespace GUI
         private async void BtnSearch_Click(object sender, EventArgs e)
         {
             string name = txtMember.Text;
-
+            string userId = UserContext.CurrentUserId;
             // Lấy thông tin từ BLL
-            List<PersonRelationship> familyTree = await personBLL.GetFamilyTree(name);
+            List<PersonRelationship> familyTree = await personBLL.GetFamilyTree(name, userId);
 
             // Xóa dữ liệu cũ trong TreeView
             treeView1.Nodes.Clear();

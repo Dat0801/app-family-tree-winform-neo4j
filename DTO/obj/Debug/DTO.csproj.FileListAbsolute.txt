@@ -3,4 +3,3 @@ D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\D
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.dll
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.pdb
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache

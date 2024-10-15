@@ -31,35 +31,47 @@ namespace DAL
         }
 
         // Lấy thông tin thành viên và các quan hệ
-        public async Task<List<PersonRelationship>> GetFamilyTree(string name)
+        public async Task<List<PersonRelationship>> GetFamilyTree(string name, string userId)
         {
             var familyRelationships = new List<PersonRelationship>();
-
-
             // Truy vấn tìm thành viên và các quan hệ
-            var query = @"MATCH (p:Person)-[r]->(related)
-                  WHERE p.name = $name
-                  RETURN p, related, type(r) as relationship";
+            var query = @"
+                        MATCH (u:User {id: $userId})-[:OWNS]->(p:Person {name: $name})
+                        OPTIONAL MATCH (p)-[:PARENT_OF]->(children)
+                        OPTIONAL MATCH (p)-[:MARRIED_TO]-(spouse)
+                        RETURN p, collect(children) AS children, spouse";
 
             var session = _driver.AsyncSession();
             try
             {
-                var result = await session.RunAsync(query, new { name });
+                var result = await session.RunAsync(query, new { userId = userId, name = name });
                 await result.ForEachAsync(record =>
                 {
                     // Khởi tạo đối tượng cho người chính
                     var person = CreatePersonDTOFromNode(record["p"].As<INode>());
 
-                    // Khởi tạo đối tượng cho thành viên liên quan
-                    var relatedPerson = CreatePersonDTOFromNode(record["related"].As<INode>());
+                    // Xử lý các con cái (children)
+                    var children = record["children"].As<List<INode>>();
+                    foreach (var childNode in children)
+                    {
+                        var child = CreatePersonDTOFromNode(childNode);
+                        familyRelationships.Add(new PersonRelationship(
+                            person,
+                            "PARENT_OF",
+                            child
+                        ));
+                    }
 
-                    // Tạo đối tượng PersonRelationship và thêm vào danh sách
-                    var relationship = record["relationship"].As<string>();
-                    familyRelationships.Add(new PersonRelationship(
-                        person,
-                        relationship,
-                        relatedPerson
-                    ));
+                    // Xử lý vợ/chồng (spouse)
+                    if (record["spouse"] != null && record["spouse"].As<INode>() != null)
+                    {
+                        var spouse = CreatePersonDTOFromNode(record["spouse"].As<INode>());
+                        familyRelationships.Add(new PersonRelationship(
+                            person,
+                            "MARRIED_TO",
+                            spouse
+                        ));
+                    }
                 });
             }
             finally
@@ -69,5 +81,6 @@ namespace DAL
 
             return familyRelationships;
         }
+
     }
 }
