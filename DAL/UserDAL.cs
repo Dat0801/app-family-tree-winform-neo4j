@@ -17,7 +17,7 @@ namespace DAL
 
         public async Task<string> GetUserIdAsync(string username, string password)
         {
-            var query = @"MATCH (u:User {username: $username, password: $password}) RETURN u.id AS userId";
+            var query = @"MATCH (u:User {username: $username, password: $password}) RETURN u.username AS username";
 
             var session = _driver.AsyncSession();
             try
@@ -25,7 +25,7 @@ namespace DAL
                 var result = await session.RunAsync(query, new { username, password });
                 if (await result.FetchAsync())
                 {
-                    return result.Current["userId"].As<string>();
+                    return result.Current["username"].As<string>();
                 }
             }
             finally

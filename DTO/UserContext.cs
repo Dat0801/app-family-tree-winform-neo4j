@@ -8,6 +8,6 @@ namespace DTO
 {
     public static class UserContext
     {
-        public static string CurrentUserId { get; set; } = string.Empty;
+        public static string CurrentUserName { get; set; } = string.Empty;
     }
 }

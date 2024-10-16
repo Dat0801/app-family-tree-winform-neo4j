@@ -14,9 +14,9 @@ namespace DTO
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public string Occupation { get; set; }
-        public string Biography { get; set; }
+        public string DateOfDeath { get; set; }
 
-        public Person(string name, string dateOfBirth, string gender, string address, string phoneNumber, string occupation, string biography)
+        public Person(string name, string dateOfBirth, string gender, string address, string phoneNumber, string occupation)
         {
             Name = name;
             DateOfBirth = dateOfBirth;
@@ -24,7 +24,6 @@ namespace DTO
             Address = address;
             PhoneNumber = phoneNumber;
             Occupation = occupation;
-            Biography = biography;
         }
     }
 }

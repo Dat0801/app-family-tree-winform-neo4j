@@ -17,9 +17,9 @@ namespace BLL
         }
 
         // Lấy thông tin gia đình của thành viên
-        public Task<List<PersonRelationship>> GetFamilyTree(string name, string userId)
+        public Task<List<PersonRelationship>> GetFamilyTree(string name, string username)
         {
-            return personDAL.GetFamilyTree(name, userId);
+            return personDAL.GetFamilyTree(name, username);
         }
     }
 }

@@ -27,14 +27,14 @@ namespace GUI
             var username = txtUsername.Text;
             var password = txtPassword.Text;
 
-            var userId = await _userBll.LoginAsync(username, password);
-            if (userId != null)
+            var userName = await _userBll.LoginAsync(username, password);
+            if (userName != null)
             {
-                UserContext.CurrentUserId = userId; // Lưu ID người dùng vào biến toàn cục
+                UserContext.CurrentUserName = userName;
                 MessageBox.Show("Đăng nhập thành công!");
-                FamilyTreeForm familyTreeForm = new FamilyTreeForm();
-                familyTreeForm.FormClosed += (s, args) => this.Show();
-                familyTreeForm.Show();
+                MainForm mainForm = new MainForm();
+                mainForm.FormClosed += (s, args) => this.Show();
+                mainForm.Show();
                 this.Hide();
             }
             else

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BLL;
+﻿using BLL;
 using DTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 namespace GUI
 {
     public partial class FamilyTreeForm : Form
@@ -19,44 +15,80 @@ namespace GUI
             InitializeComponent();
             personBLL = new PersonBLL();
             btnSearch.Click += BtnSearch_Click;
+            btnViewDetails.Click += BtnViewDetails_Click;
+        }
+
+        private void BtnViewDetails_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có node nào được chọn trong TreeView không
+            if (treeViewGiaPha.SelectedNode != null)
+            {
+                // Lấy tên của thành viên được chọn
+                string selectedPersonName = treeViewGiaPha.SelectedNode.Text;
+
+                // Tạo và hiển thị thông tin chi tiết cho thành viên
+                // Ở đây bạn có thể gọi một hàm để lấy thông tin từ cơ sở dữ liệu hoặc từ danh sách đã lưu
+                //Person details = GetPerson(selectedPersonName); // Giả sử bạn có một phương thức này
+
+                // Hiển thị thông tin chi tiết
+                //string message = $"Tên: {details.Name}\n" +
+                //                 $"Ngày sinh: {details.DateOfBirth}\n" +
+                //                 $"Giới tính: {details.Gender}\n" +
+                //                 $"Địa chỉ: {details.Address}\n" +
+                //                 $"Số điện thoại: {details.PhoneNumber}\n" +
+                //                 $"Nghề nghiệp: {details.Occupation}\n" +
+                //                 $"Tiểu sử: {details.Biography}";
+
+                //MessageBox.Show(message, "Thông Tin Chi Tiết", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một thành viên để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void BtnSearch_Click(object sender, EventArgs e)
         {
             string name = txtMember.Text;
-            string userId = UserContext.CurrentUserId;
+            string username = UserContext.CurrentUserName;
+
             // Lấy thông tin từ BLL
-            List<PersonRelationship> familyTree = await personBLL.GetFamilyTree(name, userId);
+            List<PersonRelationship> familyTree = await personBLL.GetFamilyTree(name, username);
 
             // Xóa dữ liệu cũ trong TreeView
-            treeView1.Nodes.Clear();
+            treeViewGiaPha.Nodes.Clear();
 
-            var memberNodes = new Dictionary<string, TreeNode>(); // Dictionary để theo dõi các nút đã thêm
+            // Dictionary để theo dõi các nút đã thêm
+            var memberNodes = new Dictionary<string, TreeNode>();
 
-            foreach (var relationship in familyTree)
+            // Hàm đệ quy để thêm nút cho cây gia đình
+            void AddFamilyNode(TreeNode parentNode, string personName)
             {
-                // Kiểm tra nếu người chính chưa được thêm vào
-                if (!memberNodes.ContainsKey(relationship.Person.Name))
+                // Lấy tất cả các mối quan hệ của người này
+                var relationships = familyTree.Where(r => r.Person.Name == personName).ToList();
+
+                // Thêm các nút cho mối quan hệ
+                foreach (var relationship in relationships)
                 {
-                    // Tạo nút cho người chính mà không có mối quan hệ
-                    var personNode = new TreeNode(relationship.Person.Name);
-                    memberNodes[relationship.Person.Name] = personNode; // Thêm vào dictionary
+                    var relatedNode = new TreeNode($"({relationship.Relationship}) {relationship.RelatedPerson.Name}");
+                    parentNode.Nodes.Add(relatedNode);
 
-                    // Thêm vào TreeView
-                    treeView1.Nodes.Add(personNode);
+                    // Gọi đệ quy để thêm con cái
+                    AddFamilyNode(relatedNode, relationship.RelatedPerson.Name);
                 }
-
-                // Lấy nút người chính từ dictionary
-                var mainPersonNode = memberNodes[relationship.Person.Name];
-
-                // Tạo nút cho mối quan hệ và thành viên liên quan
-                var relatedNode = new TreeNode($"({relationship.Relationship}) {relationship.RelatedPerson.Name}");
-
-                // Thêm thành viên liên quan vào người chính
-                mainPersonNode.Nodes.Add(relatedNode);
             }
 
-            treeView1.ExpandAll(); // Mở rộng tất cả các nút
+            // Tạo nút gốc cho Bob
+            var rootNode = new TreeNode(name);
+            treeViewGiaPha.Nodes.Add(rootNode);
+            memberNodes[name] = rootNode;
+
+            // Bắt đầu thêm các nút cho cây gia đình từ Bob
+            AddFamilyNode(rootNode, name);
+
+            treeViewGiaPha.ExpandAll(); // Mở rộng tất cả các nút
         }
+
+
     }
 }

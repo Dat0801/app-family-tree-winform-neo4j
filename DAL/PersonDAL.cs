@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
+﻿using DTO;
 using Neo4j.Driver;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -25,54 +22,55 @@ namespace DAL
                 node["gender"]?.As<string>(),
                 node["address"]?.As<string>(),
                 node["phone_number"]?.As<string>(),
-                node["occupation"]?.As<string>(),
-                node["biography"]?.As<string>()
+                node["occupation"]?.As<string>()
             );
         }
 
         // Lấy thông tin thành viên và các quan hệ
-        public async Task<List<PersonRelationship>> GetFamilyTree(string name, string userId)
+        public async Task<List<PersonRelationship>> GetFamilyTree(string name, string username)
         {
             var familyRelationships = new List<PersonRelationship>();
-            // Truy vấn tìm thành viên và các quan hệ
+            var processedChildren = new HashSet<long>(); // Để theo dõi các ID của con đã thêm
+
+            // Truy vấn để lấy tất cả các thế hệ con của người chính (Bob)
             var query = @"
-                        MATCH (u:User {id: $userId})-[:OWNS]->(p:Person {name: $name})
-                        OPTIONAL MATCH (p)-[:PARENT_OF]->(children)
+                        MATCH (u:User {username: $username})-[:OWNS]->(p:Person {name: $name})
+                        OPTIONAL MATCH (p)-[:PARENT_OF*1..]->(descendants)
                         OPTIONAL MATCH (p)-[:MARRIED_TO]-(spouse)
-                        RETURN p, collect(children) AS children, spouse";
+                        RETURN p, collect(distinct descendants) AS descendants, spouse";
 
             var session = _driver.AsyncSession();
             try
             {
-                var result = await session.RunAsync(query, new { userId = userId, name = name });
-                await result.ForEachAsync(record =>
+                var result = await session.RunAsync(query, new { username = username, name = name });
+                var records = await result.ToListAsync(); // Lấy tất cả các bản ghi
+                foreach (var record in records)
                 {
-                    // Khởi tạo đối tượng cho người chính
+                    // Khởi tạo đối tượng cho người chính (Bob)
                     var person = CreatePersonDTOFromNode(record["p"].As<INode>());
+                    var spouseNode = record["spouse"] != null ? CreatePersonDTOFromNode(record["spouse"].As<INode>()) : null;
 
-                    // Xử lý các con cái (children)
-                    var children = record["children"].As<List<INode>>();
-                    foreach (var childNode in children)
+                    // Xử lý các mối quan hệ con
+                    var descendants = record["descendants"].As<List<INode>>();
+                    foreach (var childNode in descendants)
                     {
-                        var child = CreatePersonDTOFromNode(childNode);
-                        familyRelationships.Add(new PersonRelationship(
-                            person,
-                            "PARENT_OF",
-                            child
-                        ));
+                        if (!processedChildren.Contains(childNode.Id)) // Kiểm tra nếu chưa xử lý
+                        {
+                            var child = CreatePersonDTOFromNode(childNode);
+                            familyRelationships.Add(new PersonRelationship(person, "PARENT_OF", child));
+                            processedChildren.Add(childNode.Id); // Đánh dấu đã thêm mối quan hệ
+
+                            // Đệ quy để thêm mối quan hệ cho con của con
+                            await AddDescendants(childNode, familyRelationships, child, processedChildren);
+                        }
                     }
 
-                    // Xử lý vợ/chồng (spouse)
-                    if (record["spouse"] != null && record["spouse"].As<INode>() != null)
+                    // Thêm mối quan hệ với vợ/chồng
+                    if (spouseNode != null)
                     {
-                        var spouse = CreatePersonDTOFromNode(record["spouse"].As<INode>());
-                        familyRelationships.Add(new PersonRelationship(
-                            person,
-                            "MARRIED_TO",
-                            spouse
-                        ));
+                        familyRelationships.Add(new PersonRelationship(person, "MARRIED_TO", spouseNode));
                     }
-                });
+                }
             }
             finally
             {
@@ -82,5 +80,40 @@ namespace DAL
             return familyRelationships;
         }
 
+        // Hàm đệ quy để thêm con của con
+        private async Task AddDescendants(INode parentNode, List<PersonRelationship> familyRelationships, Person parentPerson, HashSet<long> processedChildren)
+        {
+            var query = @"
+                        MATCH (p:Person)-[:PARENT_OF]->(descendants)
+                        WHERE id(p) = $parentId
+                        RETURN collect(distinct descendants) AS descendants";
+
+            var session = _driver.AsyncSession();
+            try
+            {
+                var result = await session.RunAsync(query, new { parentId = parentNode.Id });
+                var records = await result.ToListAsync(); // Lấy tất cả các bản ghi
+                foreach (var record in records)
+                {
+                    var childNodes = record["descendants"].As<List<INode>>();
+                    foreach (var childNode in childNodes)
+                    {
+                        if (!processedChildren.Contains(childNode.Id)) // Kiểm tra nếu chưa xử lý
+                        {
+                            var child = CreatePersonDTOFromNode(childNode);
+                            familyRelationships.Add(new PersonRelationship(parentPerson, "PARENT_OF", child));
+                            processedChildren.Add(childNode.Id); // Đánh dấu đã thêm mối quan hệ
+
+                            // Đệ quy cho con của con
+                            await AddDescendants(childNode, familyRelationships, child, processedChildren); // Thêm await
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                await session.CloseAsync();
+            }
+        }
     }
 }
