@@ -35,3 +35,44 @@ D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\D
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.exe.config
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.FamilyTreeForm.resources
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.LoginForm.resources
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\GUI.exe.config
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\GUI.exe
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\GUI.pdb
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\BLL.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\DTO.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\Neo4j.Driver.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Buffers.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.IO.Pipelines.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Memory.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Numerics.Vectors.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.ValueTuple.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\DAL.dll
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\BLL.pdb
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\DTO.pdb
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\Neo4j.Driver.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Buffers.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.IO.Pipelines.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Memory.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Numerics.Vectors.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\System.ValueTuple.xml
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\DAL.pdb
+E:\github\app-family-tree-winform-neo4j\GUI\bin\Debug\DAL.dll.config
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.exe.config
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.FamilyTreeForm.resources
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.LoginForm.resources
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.Properties.Resources.resources
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.csproj.CopyComplete
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.exe
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.pdb
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.DanhSachCayGiaPha.resources
+E:\github\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.ThongTinChiTiet.resources

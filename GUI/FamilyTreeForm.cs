@@ -58,5 +58,18 @@ namespace GUI
 
             treeView1.ExpandAll(); // Mở rộng tất cả các nút
         }
+
+        private void FamilyTreeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DanhSachCayGiaPha GiaPha_filter_form = new DanhSachCayGiaPha();
+            this.Hide();
+            GiaPha_filter_form.Show();
+            GiaPha_filter_form.FormClosed += (s, args) => this.Show();
+        }
     }
 }
