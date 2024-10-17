@@ -88,7 +88,5 @@ namespace GUI
 
             treeViewGiaPha.ExpandAll(); // Mở rộng tất cả các nút
         }
-
-
     }
 }
