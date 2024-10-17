@@ -54,3 +54,31 @@ D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\D
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DAL\obj\Debug\DAL.dll
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DAL\obj\Debug\DAL.pdb
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\DAL.dll.config
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\DAL.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\DAL.pdb
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\DTO.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\Neo4j.Driver.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Buffers.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.IO.Pipelines.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Memory.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Numerics.Vectors.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.ValueTuple.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\DTO.pdb
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\Neo4j.Driver.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Buffers.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.IO.Pipelines.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Memory.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Numerics.Vectors.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\bin\Debug\System.ValueTuple.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\obj\Debug\DAL.csproj.Up2Date
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\obj\Debug\DAL.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\DAL\obj\Debug\DAL.pdb

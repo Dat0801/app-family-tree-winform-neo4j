@@ -58,3 +58,33 @@ D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\D
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.csproj.CopyComplete
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.dll
 D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.pdb
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\BLL.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\BLL.pdb
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\DAL.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\DTO.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\Neo4j.Driver.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Buffers.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.IO.Pipelines.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Memory.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Numerics.Vectors.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.ValueTuple.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\DAL.pdb
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\DAL.dll.config
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\DTO.pdb
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\Neo4j.Driver.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Buffers.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.IO.Pipelines.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Memory.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Numerics.Vectors.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\bin\Debug\System.ValueTuple.xml
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.csproj.Up2Date
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.dll
+G:\HK7\NoSQL\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.pdb
