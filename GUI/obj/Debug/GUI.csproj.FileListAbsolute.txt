@@ -137,3 +137,4 @@ G:\HK7\NoSQL\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.csproj.Up2Date
 G:\HK7\NoSQL\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.exe
 G:\HK7\NoSQL\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.pdb
 G:\HK7\NoSQL\app-family-tree-winform-neo4j\GUI\obj\Debug\GUI.MemberManagement.resources
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\GUI\obj\Debug\GUI.MemberManagement.resources

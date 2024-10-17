@@ -18,7 +18,16 @@ namespace GUI
             this.IsMdiContainer = true;
             câyGiaPhảToolStripMenuItem.Click += CâyGiaPhảToolStripMenuItem_Click;
             dsThanhVienToolStripMenuItem.Click += DsThanhVienToolStripMenuItem_Click;
+            themThanhVientoolStripMenuItem.Click += ThemThanhVientoolStripMenuItem_Click;
         }
+
+        private void ThemThanhVientoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MemberManagement memberManagement = new MemberManagement();
+            memberManagement.MdiParent = this;
+            memberManagement.Show();
+        }
+
         private void DsThanhVienToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MemberForm memberForm = new MemberForm();

@@ -52,5 +52,15 @@ namespace BLL
         {
             return await personDAL.GetPersonsWithRelationshipsByUserName(userName);
         }
+
+        public async Task<bool> AddPersonWithoutRelationship(Person person)
+        {
+            return await personDAL.AddPersonWithoutRelationship(person);
+        }
+
+        public async Task<bool> AddPersonWithRelationship(Person person, string relationshipType, Person relatedPerson)
+        {
+            return await personDAL.AddPersonWithRelationship(person, relationshipType, relatedPerson);
+        }
     }
 }

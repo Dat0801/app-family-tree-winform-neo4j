@@ -120,7 +120,7 @@ namespace DAL
                         {
                             displayRelationship = relationshipType;  // Nếu không khớp, giữ nguyên
                         }
-                        
+
                         personRelationships.Add(new PersonRelationship(person, displayRelationship, relatedPerson));
                     }
 
@@ -372,5 +372,113 @@ namespace DAL
                 await session.CloseAsync();
             }
         }
+
+        public async Task<bool> AddPersonWithoutRelationship(Person person)
+        {
+            try
+            {
+                // Mở phiên làm việc với Neo4j
+                var session = _driver.AsyncSession();
+
+                // Tạo câu lệnh Cypher để thêm một nút Person
+                string query = @"
+            match (u:User{username:$username})
+            CREATE (p:Person {
+                name: $name, 
+                date_of_birth: $dob, 
+                gender: $gender, 
+                address: $address, 
+                phone_number: $phone, 
+                occupation: $occupation
+            }),
+            (u)-[:OWNS]->(p)
+            RETURN p";
+
+                // Thực thi câu lệnh với tham số tương ứng từ đối tượng Person
+                var result = await session.ExecuteWriteAsync(async tx =>
+                {
+                    var cursor = await tx.RunAsync(query, new
+                    {
+                        username = UserContext.CurrentUserName,
+                        name = person.Name,
+                        dob = person.DateOfBirth,
+                        gender = person.Gender,
+                        address = person.Address,
+                        phone = person.PhoneNumber,
+                        occupation = person.Occupation
+                    });
+
+                    return await cursor.SingleAsync();
+                });
+
+                // Đóng phiên làm việc
+                await session.CloseAsync();
+
+                return result != null;
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi nếu có
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> AddPersonWithRelationship(Person person, string relationshipType, Person relatedPerson)
+        {
+            try
+            {
+                // Mở phiên làm việc với Neo4j
+                var session = _driver.AsyncSession();
+
+                // Tạo câu lệnh Cypher để thêm một nút Person và mối quan hệ
+                string query = @"
+                CREATE (p:Person {
+                    name: $name, 
+                    date_of_birth: $dob, 
+                    gender: $gender, 
+                    address: $address, 
+                    phone_number: $phone, 
+                    occupation: $occupation
+                })
+                WITH p
+                MATCH (r:Person {name: $relatedName}),
+                      (u:User {username: $username})
+                CREATE (p)-[:RELATIONSHIP_TYPE]->(r),
+                       (u)-[:OWNS]->(p)
+                RETURN p";
+
+                // Thực thi câu lệnh với tham số tương ứng từ đối tượng Person và relatedPerson
+                var result = await session.ExecuteWriteAsync(async tx =>
+                {
+                    var cursor = await tx.RunAsync(query, new
+                    {
+                        username = UserContext.CurrentUserName,
+                        name = person.Name,
+                        dob = person.DateOfBirth,
+                        gender = person.Gender,
+                        address = person.Address,
+                        phone = person.PhoneNumber,
+                        occupation = person.Occupation,
+                        relatedName = relatedPerson.Name,
+                        relationshipType
+                    });;
+
+                    return await cursor.SingleAsync();
+                });
+
+                // Đóng phiên làm việc
+                await session.CloseAsync();
+
+                return result != null;
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi nếu có
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }

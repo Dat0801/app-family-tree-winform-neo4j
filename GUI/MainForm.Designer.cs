@@ -33,6 +33,7 @@ namespace GUI
             this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dsThanhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.câyGiaPhảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.themThanhVientoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@ namespace GUI
             // 
             this.sToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dsThanhVienToolStripMenuItem,
-            this.câyGiaPhảToolStripMenuItem});
+            this.câyGiaPhảToolStripMenuItem,
+            this.themThanhVientoolStripMenuItem});
             this.sToolStripMenuItem.Name = "sToolStripMenuItem";
             this.sToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.sToolStripMenuItem.Text = "Chức năng";
@@ -67,6 +69,12 @@ namespace GUI
             this.câyGiaPhảToolStripMenuItem.Name = "câyGiaPhảToolStripMenuItem";
             this.câyGiaPhảToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
             this.câyGiaPhảToolStripMenuItem.Text = "Cây gia phả";
+            // 
+            // themThanhVientoolStripMenuItem
+            // 
+            this.themThanhVientoolStripMenuItem.Name = "themThanhVientoolStripMenuItem";
+            this.themThanhVientoolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.themThanhVientoolStripMenuItem.Text = "Thêm thành viên";
             // 
             // MainForm
             // 
@@ -90,5 +98,6 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dsThanhVienToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem câyGiaPhảToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem themThanhVientoolStripMenuItem;
     }
 }
