@@ -1,32 +1,3 @@
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\BLL.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\BLL.pdb
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DAL.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DTO.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DAL.pdb
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DAL.dll.config
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DTO.pdb
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.csproj.CopyComplete
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.pdb
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Neo4j.Driver.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\netstandard.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Memory.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.IO.Pipelines.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Buffers.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Numerics.Vectors.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Neo4j.Driver.xml
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Memory.xml
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.IO.Pipelines.xml
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Buffers.xml
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Numerics.Vectors.xml
 E:\github\app-family-tree-winform-neo4j\BLL\bin\Debug\BLL.dll
 E:\github\app-family-tree-winform-neo4j\BLL\bin\Debug\BLL.pdb
 E:\github\app-family-tree-winform-neo4j\BLL\bin\Debug\DAL.dll
@@ -57,3 +28,33 @@ E:\github\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.csproj.CoreCompileInpu
 E:\github\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.csproj.CopyComplete
 E:\github\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.dll
 E:\github\app-family-tree-winform-neo4j\BLL\obj\Debug\BLL.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\BLL.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\BLL.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DAL.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DTO.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Neo4j.Driver.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Buffers.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.IO.Pipelines.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Memory.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Numerics.Vectors.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.ValueTuple.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DAL.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DAL.dll.config
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\DTO.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\Neo4j.Driver.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Buffers.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.IO.Pipelines.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Memory.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Numerics.Vectors.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\bin\Debug\System.ValueTuple.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\BLL\obj\Debug\BLL.pdb

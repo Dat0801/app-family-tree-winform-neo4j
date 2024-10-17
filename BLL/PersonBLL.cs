@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
 using DTO;
+using DAL;
 namespace BLL
 {
     public class PersonBLL
@@ -16,14 +16,14 @@ namespace BLL
             personDAL = new PersonDAL();
         }
 
-        public async Task<List<Person>> GetPersonsByUserId(string userId)
+        public async Task<List<Person>> GetPersonsByUserName(string userName)
         {
-            return await personDAL.GetPersonsByUserId(userId);
+            return await personDAL.GetPersonsByUserName(userName);
         }
 
-        public Task<List<PersonRelationship>> GetFamilyTree(string name, string userId)
+        public Task<List<PersonRelationship>> GetFamilyTree(string name, string userName)
         {
-            return personDAL.GetFamilyTree(name, username);
+            return personDAL.GetFamilyTree(name, userName);
         }
         public async Task<List<Person>> SearchPersons(string fullname, DateTime? birthDate, string gender, string address, string phoneNumber, string occupation)
         {

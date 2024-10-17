@@ -13,9 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
-    public partial class DanhSachCayGiaPha : Form
+    public partial class MemberForm : Form
     {
-        public DanhSachCayGiaPha()
+        public MemberForm()
         {
             InitializeComponent();
         }
@@ -40,9 +40,9 @@ namespace GUI
             fullname_txt.Clear();
             address_txt.Clear();
             gender_combo.SelectedIndex = -1;
-            string userId = UserContext.CurrentUserId;
+            string userName = UserContext.CurrentUserName;
             PersonBLL personBLL = new PersonBLL();
-            List<Person> persons = await personBLL.GetPersonsByUserId(userId);
+            List<Person> persons = await personBLL.GetPersonsByUserName(userName);
 
             if (persons != null && persons.Count > 0)
             {

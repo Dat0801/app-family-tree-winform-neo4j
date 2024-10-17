@@ -1,8 +1,9 @@
 ﻿using DTO;
 using Neo4j.Driver;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
-using static System.Collections.Specialized.BitVector32;
 
 namespace DAL
 {
@@ -26,17 +27,17 @@ namespace DAL
             );
         }
 
-        public async Task<List<Person>> GetPersonsByUserId(string userId)
+        public async Task<List<Person>> GetPersonsByUserName(string userName)
         {
             List<Person> persons = new List<Person>();
             string query = @"
-        MATCH (u:User {id: $userId})-[:OWNS]->(p:Person)
+        MATCH (u:User {username: $userName})-[:OWNS]->(p:Person)
         RETURN p";
 
             IAsyncSession session = _driver.AsyncSession();
             try
             {
-                IResultCursor result = await session.RunAsync(query, new { userId });
+                IResultCursor result = await session.RunAsync(query, new { userName });
                 await result.ForEachAsync(record =>
                 {
                     INode personNode = record["p"].As<INode>();
@@ -56,7 +57,7 @@ namespace DAL
             List<Person> persons = new List<Person>();
             StringBuilder query = new StringBuilder();
             string birthDateString = birthDate.HasValue ? birthDate.Value.ToString("yyyy-MM-dd") : null;
-            query.Append("MATCH (u:User {id: $userId})-[:OWNS]->(p:Person) WHERE 1=1 ");
+            query.Append("MATCH (u:User {id: $username})-[:OWNS]->(p:Person) WHERE 1=1 ");
             if (!string.IsNullOrEmpty(fullname))
             {
                 query.Append("AND p.name CONTAINS $fullname ");
@@ -82,11 +83,11 @@ namespace DAL
                 query.Append("AND p.occupation CONTAINS $occupation ");
             }
             query.Append("RETURN p");
-            string userId = UserContext.CurrentUserId;
+            string username = UserContext.CurrentUserName;
             IAsyncSession session = _driver.AsyncSession();
             try
             {
-                IResultCursor result = await session.RunAsync(query.ToString(), new { userId, fullname, birthDate = birthDateString, gender, address, phoneNumber, occupation });
+                IResultCursor result = await session.RunAsync(query.ToString(), new { username, fullname, birthDate = birthDateString, gender, address, phoneNumber, occupation });
 
                 await result.ForEachAsync(record =>
                 {

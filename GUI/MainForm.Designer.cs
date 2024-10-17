@@ -31,7 +31,7 @@ namespace GUI
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dsThanhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.câyGiaPhảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,17 +50,17 @@ namespace GUI
             // sToolStripMenuItem
             // 
             this.sToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dToolStripMenuItem,
+            this.dsThanhVienToolStripMenuItem,
             this.câyGiaPhảToolStripMenuItem});
             this.sToolStripMenuItem.Name = "sToolStripMenuItem";
             this.sToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.sToolStripMenuItem.Text = "Chức năng";
             // 
-            // dToolStripMenuItem
+            // dsThanhVienToolStripMenuItem
             // 
-            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
-            this.dToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.dToolStripMenuItem.Text = "Danh sách thành viên";
+            this.dsThanhVienToolStripMenuItem.Name = "dsThanhVienToolStripMenuItem";
+            this.dsThanhVienToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.dsThanhVienToolStripMenuItem.Text = "Danh sách thành viên";
             // 
             // câyGiaPhảToolStripMenuItem
             // 
@@ -88,7 +88,7 @@ namespace GUI
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dsThanhVienToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem câyGiaPhảToolStripMenuItem;
     }
 }

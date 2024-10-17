@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33829.357
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33927.289
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{47FD2BDB-09A0-411E-B374-D34EBD44955D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{073301BD-50ED-42DD-8299-7A87C132DFAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{413406E8-0C68-406C-BA1D-7CC9CAEE40BE} = {413406E8-0C68-406C-BA1D-7CC9CAEE40BE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{864D331E-33BC-440B-BD8C-3D7A7B9630C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{073301BD-50ED-42DD-8299-7A87C132DFAA} = {073301BD-50ED-42DD-8299-7A87C132DFAA}
+		{413406E8-0C68-406C-BA1D-7CC9CAEE40BE} = {413406E8-0C68-406C-BA1D-7CC9CAEE40BE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{413406E8-0C68-406C-BA1D-7CC9CAEE40BE}"
 EndProject

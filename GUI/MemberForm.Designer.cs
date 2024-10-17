@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class DanhSachCayGiaPha
+    partial class MemberForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,9 +1,3 @@
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\DTO.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\DTO.pdb
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.dll
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.pdb
-D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
 E:\github\app-family-tree-winform-neo4j\DTO\bin\Debug\DTO.dll
 E:\github\app-family-tree-winform-neo4j\DTO\bin\Debug\DTO.pdb
 E:\github\app-family-tree-winform-neo4j\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -29,3 +23,27 @@ E:\github\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.csproj.CoreCompileInpu
 E:\github\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.csproj.CopyComplete
 E:\github\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.dll
 E:\github\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\DTO.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\DTO.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Buffers.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Memory.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.ValueTuple.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Memory.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Buffers.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.ValueTuple.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.csproj.CopyComplete
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\Neo4j.Driver.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.IO.Pipelines.dll
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\Neo4j.Driver.xml
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\bin\Debug\System.IO.Pipelines.xml
