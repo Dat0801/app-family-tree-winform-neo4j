@@ -43,5 +43,14 @@ namespace BLL
             return await personDAL.GetPersonRelationships(personName);
         }
 
+        public async Task<Person> GetPersonsByName(string name)
+        {
+            return await personDAL.GetPersonsByName(name);
+        }
+
+        public async Task<List<Person>> GetPersonsWithRelationshipsByUserName(string userName)
+        {
+            return await personDAL.GetPersonsWithRelationshipsByUserName(userName);
+        }
     }
 }

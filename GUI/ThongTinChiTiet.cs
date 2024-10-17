@@ -22,7 +22,6 @@ namespace GUI
         public string BirthDateText { get; set; }
         public string AddressText { get; set; }
         public string OccupationText { get; set; }
-        public string BiographyText { get; set; }
         public ThongTinChiTiet()
         {
             InitializeComponent();
@@ -87,7 +86,6 @@ namespace GUI
             label_bd.Text = BirthDateText;
             label_addr.Text = AddressText;
             label_occ.Text = OccupationText;
-            bio_txt.Text = BiographyText;
 
             await LoadRelationshipsToGridView(NameText);
         }

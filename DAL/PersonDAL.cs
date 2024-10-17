@@ -27,6 +27,30 @@ namespace DAL
             );
         }
 
+        public async Task<Person> GetPersonsByName(string name)
+        {
+            Person person = new Person();
+            string query = @"
+        MATCH (p:Person {name:$name})
+        RETURN p";
+
+            IAsyncSession session = _driver.AsyncSession();
+            try
+            {
+                IResultCursor result = await session.RunAsync(query, new { name });
+                await result.ForEachAsync(record =>
+                {
+                    person = CreatePersonDTOFromNode(record["p"].As<INode>());
+                });
+            }
+            finally
+            {
+                await session.CloseAsync();
+            }
+            return person;
+        }
+
+
         public async Task<List<Person>> GetPersonsByUserName(string userName)
         {
             List<Person> persons = new List<Person>();
@@ -51,6 +75,74 @@ namespace DAL
             }
             return persons;
         }
+
+        public async Task<List<Person>> GetPersonsWithRelationshipsByUserName(string userName)
+        {
+            List<Person> persons = new List<Person>();
+            string query = @"
+        MATCH (u:User {username: $userName})-[:OWNS]->(p:Person)
+        OPTIONAL MATCH (p)-[r]->(relatedPerson:Person)
+        RETURN p, collect(type(r)) AS relationships, collect(relatedPerson) AS relatedPersons";
+
+            IAsyncSession session = _driver.AsyncSession();
+            try
+            {
+                IResultCursor result = await session.RunAsync(query, new { userName });
+                await result.ForEachAsync(record =>
+                {
+                    // Lấy node Person
+                    INode personNode = record["p"].As<INode>();
+                    Person person = CreatePersonDTOFromNode(personNode);
+
+                    // Lấy các mối quan hệ
+                    var relationships = record["relationships"].As<List<string>>();
+                    var relatedPersonsNodes = record["relatedPersons"].As<List<INode>>();
+
+                    // Chuyển đổi các node liên quan thành Person
+                    List<PersonRelationship> personRelationships = new List<PersonRelationship>();
+
+                    for (int i = 0; i < relatedPersonsNodes.Count; i++)
+                    {
+                        Person relatedPerson = CreatePersonDTOFromNode(relatedPersonsNodes[i]);
+                        string relationshipType = relationships[i];
+
+                        // Thêm các quan hệ vào danh sách
+                        string displayRelationship;
+                        if (relationshipType == "PARENT_OF")
+                        {
+                            displayRelationship = "Cha/Mẹ";
+                        }
+                        else if (relationshipType == "MARRIED_TO")
+                        {
+                            displayRelationship = "Vợ/Chồng";
+                        }
+                        else
+                        {
+                            displayRelationship = relationshipType;  // Nếu không khớp, giữ nguyên
+                        }
+                        
+                        personRelationships.Add(new PersonRelationship(person, displayRelationship, relatedPerson));
+                    }
+
+                    // Gắn các mối quan hệ vào đối tượng Person
+                    foreach (var personRelationship in personRelationships)
+                    {
+                        person.RelatedPerson = personRelationship.RelatedPerson;
+                        person.Relationship = personRelationship.Relationship;
+                    }
+
+                    // Thêm người này vào danh sách
+                    persons.Add(person);
+                });
+            }
+            finally
+            {
+                await session.CloseAsync();
+            }
+
+            return persons;
+        }
+
 
         public async Task<List<Person>> SearchPersons(string fullname, DateTime? birthDate, string gender, string address, string phoneNumber, string occupation)
         {
@@ -102,7 +194,7 @@ namespace DAL
             }
             return persons;
         }
-        
+
         public bool UpdatePerson(string fullname, DateTime? birthDate, string gender, string phoneNumber, string address, string occupation)
         {
             string query = @"

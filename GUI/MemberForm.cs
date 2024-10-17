@@ -10,14 +10,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using Report;
 namespace GUI
 {
     public partial class MemberForm : Form
     {
+        PersonBLL personBLL = new PersonBLL();
+        ExcelExport exe = new ExcelExport();
         public MemberForm()
         {
             InitializeComponent();
+            btnExcel.Click += BtnExcel_Click;
+        }
+
+        private async void BtnExcel_Click(object sender, EventArgs e)
+        {
+            List<Person> Persons = await personBLL.GetPersonsByUserName(UserContext.CurrentUserName);
+            var filename = "DanhSachThanhVien";
+            exe.ExportKhoa(Persons, ref filename, false);
+            System.Diagnostics.Process.Start(filename);
         }
 
         private async void DanhSachCayGiaPha_Load(object sender, EventArgs e)
@@ -41,7 +52,6 @@ namespace GUI
             address_txt.Clear();
             gender_combo.SelectedIndex = -1;
             string userName = UserContext.CurrentUserName;
-            PersonBLL personBLL = new PersonBLL();
             List<Person> persons = await personBLL.GetPersonsByUserName(userName);
 
             if (persons != null && persons.Count > 0)
@@ -49,7 +59,7 @@ namespace GUI
                 int idCounter = 1;
                 foreach (Person person in persons)
                 {
-                    string genderText = person.Gender.ToLower() == "nữ" ? "Female" : "Male";
+                    string genderText = person.Gender.ToLower() == "female" ? "Nữ" : "Nam";
                     datafamilytree.Rows.Add(
                         idCounter++,
                         person.Name,
@@ -58,8 +68,8 @@ namespace GUI
                         person.PhoneNumber,
                         person.Address,
                         person.Occupation
-                    ) ;
-                }    
+                    );
+                }
             }
             else
             {
@@ -67,21 +77,15 @@ namespace GUI
                 MessageBox.Show("Không có dữ liệu người dùng nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void FamilyTreeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {Application.Exit();}
-            else{ e.Cancel = true;}
-        }
+
         private async void search_btn_Click(object sender, EventArgs e)
         {
             string fullname = fullname_txt.Text.Trim();
             string gender = gender_combo.SelectedItem != null ? gender_combo.SelectedItem.ToString() : string.Empty;
             if (gender == "Nam")
-            {gender = "Male";}
+            { gender = "Male"; }
             else if (gender == "Nữ")
-            {gender = "Female";}
+            { gender = "Female"; }
             string address = address_txt.Text.Trim();
             string phoneNumber = phonenum_txt.Text.Trim();
             string occupation = occupation_txt.Text.Trim();
@@ -134,7 +138,6 @@ namespace GUI
                 string birthDate = dateTimePicker1.Value.ToString("dd/MM/yyyy");
                 string address = address_txt.Text.Trim();
                 string occupation = occupation_txt.Text.Trim();
-                string biography = "Mô tả chi tiết người này"; 
 
                 ThongTinChiTiet detailForm = new ThongTinChiTiet();
                 detailForm.NameText = name;
@@ -143,7 +146,6 @@ namespace GUI
                 detailForm.BirthDateText = birthDate;
                 detailForm.AddressText = address;
                 detailForm.OccupationText = occupation;
-                detailForm.BiographyText = biography;
                 detailForm.ShowDialog();
             }
             else
@@ -168,7 +170,7 @@ namespace GUI
             {
                 MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 datafamilytree.Rows.Clear();
-                DanhSachCayGiaPha_Load(sender,e);
+                DanhSachCayGiaPha_Load(sender, e);
             }
             else
             {

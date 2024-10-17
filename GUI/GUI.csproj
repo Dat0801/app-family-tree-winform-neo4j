@@ -40,6 +40,9 @@
     <Reference Include="Neo4j.Driver, Version=5.25.35.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Neo4j.Driver.5.25.0\lib\netstandard2.0\Neo4j.Driver.dll</HintPath>
     </Reference>
+    <Reference Include="Report">
+      <HintPath>..\Report\bin\Debug\Report.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
