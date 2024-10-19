@@ -58,9 +58,14 @@ namespace BLL
             return await personDAL.AddPersonWithoutRelationship(person);
         }
 
-        public async Task<bool> AddPersonWithRelationship(Person person, string relationshipType, Person relatedPerson)
+        public async Task<bool> AddPersonWithParent(Person person, Person relatedPerson)
         {
-            return await personDAL.AddPersonWithRelationship(person, relationshipType, relatedPerson);
+            return await personDAL.AddPersonWithParent(person, relatedPerson);
+        }
+
+        public async Task<bool> AddPersonWithSpouse(Person person, Person relatedPerson)
+        {
+            return await personDAL.AddPersonWithSpouse(person, relatedPerson);
         }
     }
 }

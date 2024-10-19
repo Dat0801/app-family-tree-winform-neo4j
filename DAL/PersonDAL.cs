@@ -424,7 +424,7 @@ namespace DAL
             }
         }
 
-        public async Task<bool> AddPersonWithRelationship(Person person, string relationshipType, Person relatedPerson)
+        public async Task<bool> AddPersonWithParent(Person person, Person relatedPerson)
         {
             try
             {
@@ -444,7 +444,7 @@ namespace DAL
                 WITH p
                 MATCH (r:Person {name: $relatedName}),
                       (u:User {username: $username})
-                CREATE (p)-[:RELATIONSHIP_TYPE]->(r),
+                CREATE (r)-[:PARENT_OF]->(p),
                        (u)-[:OWNS]->(p)
                 RETURN p";
 
@@ -460,9 +460,63 @@ namespace DAL
                         address = person.Address,
                         phone = person.PhoneNumber,
                         occupation = person.Occupation,
-                        relatedName = relatedPerson.Name,
-                        relationshipType
+                        relatedName = relatedPerson.Name
                     });;
+
+                    return await cursor.SingleAsync();
+                });
+
+                // Đóng phiên làm việc
+                await session.CloseAsync();
+
+                return result != null;
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi nếu có
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> AddPersonWithSpouse(Person person, Person relatedPerson)
+        {
+            try
+            {
+                // Mở phiên làm việc với Neo4j
+                var session = _driver.AsyncSession();
+
+                // Tạo câu lệnh Cypher để thêm một nút Person và mối quan hệ
+                string query = @"
+                CREATE (p:Person {
+                    name: $name, 
+                    date_of_birth: $dob, 
+                    gender: $gender, 
+                    address: $address, 
+                    phone_number: $phone, 
+                    occupation: $occupation
+                })
+                WITH p
+                MATCH (r:Person {name: $relatedName}),
+                      (u:User {username: $username})
+                CREATE (r)-[:MARRIED_TO]->(p),
+                       (u)-[:OWNS]->(p)
+                RETURN p";
+
+                // Thực thi câu lệnh với tham số tương ứng từ đối tượng Person và relatedPerson
+                var result = await session.ExecuteWriteAsync(async tx =>
+                {
+                    var cursor = await tx.RunAsync(query, new
+                    {
+                        username = UserContext.CurrentUserName,
+                        name = person.Name,
+                        dob = person.DateOfBirth,
+                        gender = person.Gender,
+                        address = person.Address,
+                        phone = person.PhoneNumber,
+                        occupation = person.Occupation,
+                        relatedName = relatedPerson.Name
+                    }); ;
 
                     return await cursor.SingleAsync();
                 });

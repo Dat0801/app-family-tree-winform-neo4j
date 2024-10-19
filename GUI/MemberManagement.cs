@@ -52,7 +52,15 @@ namespace GUI
             {
                 Person relatedPerson = new Person();
                 relatedPerson.Name = member.Name;
-                bool isAdded = await personBLL.AddPersonWithRelationship(person, relationship, relatedPerson);
+                bool isAdded = false;
+                if (relationship == "CHA/MẸ")
+                {
+                    isAdded = await personBLL.AddPersonWithParent(person, relatedPerson);
+                }
+                else
+                {
+                    isAdded = await personBLL.AddPersonWithSpouse(person, relatedPerson);
+                }
                 if (isAdded)
                 {
                     MessageBox.Show("Thêm thành viên thành công.");
