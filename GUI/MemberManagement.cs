@@ -44,11 +44,13 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Thêm thành viên không thành công.");
+                    return;
                 }
-                LoadThanhVien();
+
             } else if(name == "" || relationship == "")
             {
                 MessageBox.Show("Vui lòng chọn đầy đủ thành viên và mối quan hệ");
+                return;
             } else
             {
                 Person relatedPerson = new Person();
@@ -69,9 +71,11 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Thêm thành viên không thành công.");
+                    return;
                 }
-                LoadThanhVien();
             }
+            LoadThanhVien();
+            loadCboMember();
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -96,13 +100,12 @@ namespace GUI
             }
         }
 
-        private async void MemberManagement_Load(object sender, EventArgs e)
+        public async void loadCboMember()
         {
-            LoadThanhVien();
             string userName = UserContext.CurrentUserName;
             List<Person> persons = await personBLL.GetPersonsByUserName(userName);
-            var personsWithEmpty = new List<Person>(persons); 
-            personsWithEmpty.Insert(0, new Person { Name = "" }); 
+            var personsWithEmpty = new List<Person>(persons);
+            personsWithEmpty.Insert(0, new Person { Name = "" });
             cboMember.DataSource = personsWithEmpty;
             cboMember.DisplayMember = "Name";
             cboMember.ValueMember = "Name";
@@ -110,6 +113,12 @@ namespace GUI
             {
                 cboMember.SelectedValue = SelectedPerson.Name;
             }
+        }
+
+        private void MemberManagement_Load(object sender, EventArgs e)
+        {
+            LoadThanhVien();
+            loadCboMember();
             var relationshipList = new List<string> { "", "CHA/MẸ", "VỢ/CHỒNG" };
             cboRelationship.DataSource = relationshipList;
         }

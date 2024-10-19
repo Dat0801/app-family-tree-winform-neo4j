@@ -20,12 +20,27 @@ namespace GUI
             InitializeComponent();
             _userBll = new UserBLL();
             btnLogin.Click += BtnLogin_Click;
+            btnRegister.Click += BtnRegister_Click;
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.FormClosed += (s, args) => this.Show();
+            registerForm.Show();
+            this.Hide();
         }
 
         private async void BtnLogin_Click(object sender, EventArgs e)
         {
             var username = txtUsername.Text;
             var password = txtPassword.Text;
+
+            if(username == null || password == null)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhập");
+                return;
+            }
 
             var userName = await _userBll.LoginAsync(username, password);
             if (userName != null)

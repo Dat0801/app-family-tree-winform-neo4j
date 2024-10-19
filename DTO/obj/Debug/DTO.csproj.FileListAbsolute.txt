@@ -72,3 +72,4 @@ G:\HK7\NoSQL\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.csproj.CoreCompileI
 G:\HK7\NoSQL\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.csproj.Up2Date
 G:\HK7\NoSQL\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.dll
 G:\HK7\NoSQL\app-family-tree-winform-neo4j\DTO\obj\Debug\DTO.pdb
+D:\OneDrive - Ho Chi Minh city University of Food Industry\HK7-2024-2025\NoSQL\DoAn\HeThongQuanLyGiaPha\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache

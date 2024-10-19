@@ -21,5 +21,10 @@ namespace BLL
             // Gọi DAL để lấy ID người dùng
             return await _userDal.GetUserIdAsync(username, password);
         }
+
+        public async Task<bool> RegisterUserAsync(string username, string password)
+        {
+            return await _userDal.RegisterUserAsync(username, password);
+        }
     }
 }

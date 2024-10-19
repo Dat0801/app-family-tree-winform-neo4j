@@ -44,7 +44,7 @@ namespace GUI
             this.sToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(835, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1044, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -55,7 +55,7 @@ namespace GUI
             this.câyGiaPhảToolStripMenuItem,
             this.themThanhVientoolStripMenuItem});
             this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(93, 34);
             this.sToolStripMenuItem.Text = "Chức năng";
             // 
             // dsThanhVienToolStripMenuItem
@@ -80,6 +80,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GUI.Properties.Resources.istockphoto_457853955_612x612;
             this.ClientSize = new System.Drawing.Size(835, 536);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
