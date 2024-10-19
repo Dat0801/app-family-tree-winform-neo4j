@@ -10,12 +10,44 @@ namespace GUI
     public partial class FamilyTreeForm : Form
     {
         private readonly PersonBLL personBLL;
+        public string SelectedName = null;
         public FamilyTreeForm()
         {
             InitializeComponent();
             personBLL = new PersonBLL();
             btnSearch.Click += BtnSearch_Click;
             btnViewDetails.Click += BtnViewDetails_Click;
+            btnAddMember.Click += BtnAddMember_Click;
+            this.Load += FamilyTreeForm_Load;
+        }
+
+        private void FamilyTreeForm_Load(object sender, EventArgs e)
+        {
+            if(SelectedName != null)
+            {
+                txtMember.Text = SelectedName;
+                loadCayGiaPha(SelectedName, UserContext.CurrentUserName);
+            }
+        }
+
+        private async void BtnAddMember_Click(object sender, EventArgs e)
+        {
+            if (treeViewGiaPha.SelectedNode != null)
+            {
+                string selectedPersonName = treeViewGiaPha.SelectedNode.Text;
+                if (selectedPersonName.Contains(')'))
+                {
+                    selectedPersonName = selectedPersonName.Substring(selectedPersonName.IndexOf(')') + 1).Trim();
+                }
+                Person person = await personBLL.GetPersonsByName(selectedPersonName);
+                MemberManagement memberManagement = new MemberManagement();
+                memberManagement.SelectedPerson = person;
+                memberManagement.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một thành viên để thêm thành viên mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void BtnViewDetails_Click(object sender, EventArgs e)
@@ -44,19 +76,19 @@ namespace GUI
             }
         }
 
-        private async void BtnSearch_Click(object sender, EventArgs e)
+        
+
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
             string name = txtMember.Text;
             string username = UserContext.CurrentUserName;
+            loadCayGiaPha(name, username);
+        }
 
+        public async void loadCayGiaPha(string name, string username)
+        {
             // Lấy thông tin từ BLL
             List<PersonRelationship> familyTree = await personBLL.GetFamilyTree(name, username);
-
-            if (familyTree.Count == 0)
-            {
-                MessageBox.Show("Thành viên tìm kiếm không tồn tại");
-                return;
-            }
 
             // Xóa dữ liệu cũ trong TreeView
             treeViewGiaPha.Nodes.Clear();

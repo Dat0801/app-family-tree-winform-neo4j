@@ -21,6 +21,14 @@ namespace GUI
         {
             InitializeComponent();
             btnExcel.Click += BtnExcel_Click;
+            btnXemCayGiaPha.Click += BtnXemCayGiaPha_Click;
+        }
+
+        private void BtnXemCayGiaPha_Click(object sender, EventArgs e)
+        {
+            FamilyTreeForm familyTreeForm = new FamilyTreeForm();
+            familyTreeForm.SelectedName = fullname_txt.Text;
+            familyTreeForm.ShowDialog();
         }
 
         private async void BtnExcel_Click(object sender, EventArgs e)

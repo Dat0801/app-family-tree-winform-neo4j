@@ -14,6 +14,7 @@ namespace GUI
     public partial class MemberManagement : Form
     {
         PersonBLL personBLL = new PersonBLL();
+        public Person SelectedPerson = null;
         public MemberManagement()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace GUI
 
         private async void BtnThem_Click(object sender, EventArgs e)
         {
-            var member = (Person) cboMember.SelectedValue;
+            string name = cboMember.SelectedValue.ToString();
             Person person = new Person();
             person.Name = txtName.Text;
             person.Gender = cboGender.SelectedItem.ToString();
@@ -33,7 +34,7 @@ namespace GUI
             person.PhoneNumber = txtPhone.Text;
             person.Occupation = txtOccupation.Text;
             string relationship = cboRelationship.SelectedItem.ToString();
-            if (member.Name == "" && relationship == "")
+            if (name == "" && relationship == "")
             {
                 bool isAdded = await personBLL.AddPersonWithoutRelationship(person);
                 if (isAdded)
@@ -45,13 +46,13 @@ namespace GUI
                     MessageBox.Show("Thêm thành viên không thành công.");
                 }
                 LoadThanhVien();
-            } else if(member.Name == "" || relationship == "")
+            } else if(name == "" || relationship == "")
             {
                 MessageBox.Show("Vui lòng chọn đầy đủ thành viên và mối quan hệ");
             } else
             {
                 Person relatedPerson = new Person();
-                relatedPerson.Name = member.Name;
+                relatedPerson.Name = name;
                 bool isAdded = false;
                 if (relationship == "CHA/MẸ")
                 {
@@ -104,6 +105,11 @@ namespace GUI
             personsWithEmpty.Insert(0, new Person { Name = "" }); 
             cboMember.DataSource = personsWithEmpty;
             cboMember.DisplayMember = "Name";
+            cboMember.ValueMember = "Name";
+            if (SelectedPerson != null)
+            {
+                cboMember.SelectedValue = SelectedPerson.Name;
+            }
             var relationshipList = new List<string> { "", "CHA/MẸ", "VỢ/CHỒNG" };
             cboRelationship.DataSource = relationshipList;
         }

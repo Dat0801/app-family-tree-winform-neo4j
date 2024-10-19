@@ -34,12 +34,13 @@ namespace GUI
             this.treeViewGiaPha = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnViewDetails = new System.Windows.Forms.Button();
+            this.btnAddMember = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(536, 62);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(125, 53);
             this.btnSearch.TabIndex = 2;
@@ -49,7 +50,7 @@ namespace GUI
             // txtMember
             // 
             this.txtMember.Location = new System.Drawing.Point(265, 74);
-            this.txtMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMember.Margin = new System.Windows.Forms.Padding(4);
             this.txtMember.Name = "txtMember";
             this.txtMember.Size = new System.Drawing.Size(248, 22);
             this.txtMember.TabIndex = 3;
@@ -57,7 +58,7 @@ namespace GUI
             // treeViewGiaPha
             // 
             this.treeViewGiaPha.Location = new System.Drawing.Point(112, 148);
-            this.treeViewGiaPha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeViewGiaPha.Margin = new System.Windows.Forms.Padding(4);
             this.treeViewGiaPha.Name = "treeViewGiaPha";
             this.treeViewGiaPha.Size = new System.Drawing.Size(961, 436);
             this.treeViewGiaPha.TabIndex = 4;
@@ -76,24 +77,35 @@ namespace GUI
             // btnViewDetails
             // 
             this.btnViewDetails.Location = new System.Drawing.Point(683, 62);
-            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewDetails.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewDetails.Name = "btnViewDetails";
             this.btnViewDetails.Size = new System.Drawing.Size(188, 53);
             this.btnViewDetails.TabIndex = 7;
             this.btnViewDetails.Text = "Xem chi tiết";
             this.btnViewDetails.UseVisualStyleBackColor = true;
             // 
+            // btnAddMember
+            // 
+            this.btnAddMember.Location = new System.Drawing.Point(885, 62);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddMember.Name = "btnAddMember";
+            this.btnAddMember.Size = new System.Drawing.Size(188, 53);
+            this.btnAddMember.TabIndex = 8;
+            this.btnAddMember.Text = "Thêm thành viên";
+            this.btnAddMember.UseVisualStyleBackColor = true;
+            // 
             // FamilyTreeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 641);
+            this.Controls.Add(this.btnAddMember);
             this.Controls.Add(this.btnViewDetails);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.treeViewGiaPha);
             this.Controls.Add(this.txtMember);
             this.Controls.Add(this.btnSearch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FamilyTreeForm";
             this.Text = "Cây gia phả";
             this.ResumeLayout(false);
@@ -108,6 +120,7 @@ namespace GUI
         private System.Windows.Forms.TreeView treeViewGiaPha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnViewDetails;
+        private System.Windows.Forms.Button btnAddMember;
     }
 }
 
